@@ -28,4 +28,17 @@ public class Menu {
 
     }
 
+    public static void mostrarMenuCliente() {
+
+        System.out.print("""
+                \n\tMENÚ DE CLIENTE
+                Seleccione una opcion:
+                  a. Agregar un productos a la cesta.
+                  b. Quitar un producto de la cesta.
+                  c. Mostrar productos de la cesta.
+                  d. Ver total de productos.
+                  e. Salir de sesión.
+                """);
+
+    }
 }
