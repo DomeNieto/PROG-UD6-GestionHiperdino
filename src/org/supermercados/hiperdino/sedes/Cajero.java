@@ -68,4 +68,18 @@ public class Cajero {
         }
 
     }
+
+    public void mostrarClientesPendientes() {
+
+        System.out.println("Los clientes pendientes del cajero " + numeroIdenticacion + " son: ");
+
+        if (!colaClientes.isEmpty()) {
+            for (Cliente cliente : colaClientes) {
+                System.out.println(cliente);
+            }
+        } else {
+            System.out.println("No hay clientes en la cola");
+        }
+
+    }
 }
