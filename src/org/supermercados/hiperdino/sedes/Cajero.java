@@ -82,4 +82,15 @@ public class Cajero {
         }
 
     }
+
+    public void cerrarCaja() {
+
+        if (!colaClientes.isEmpty()) {
+            System.out.println("No se puede cerrar la caja, quedan clientes en la cola");
+        } else {
+            cajaAbierta = false;
+            System.out.println("La caja del cajero " + numeroIdenticacion + " fue cerrada exitosamente");
+        }
+
+    }
 }
