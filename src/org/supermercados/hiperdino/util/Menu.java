@@ -13,4 +13,19 @@ public class Menu {
                 """);
     }
 
+    public static void mostrarMenuCajero() {
+
+        System.out.print("""
+                \n\tMENÚ DE CAJERO
+                Seleccione una opcion:
+                  a. Abrir caja.
+                  b. Añadir cliente/s a la cola.
+                  c. Atender un cliente.
+                  d. Mostrar los clientes pendientes.
+                  e. Cerrar supermecados.
+                  f. Salir de sesión.
+                """);
+
+    }
+
 }
