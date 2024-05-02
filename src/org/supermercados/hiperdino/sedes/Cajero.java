@@ -56,4 +56,16 @@ public class Cajero {
         colaClientes.add(cliente);
 
     }
+
+    public void atenderCliente() {
+
+        if (!colaClientes.isEmpty()) {
+            colaClientes.poll();
+            System.out.println("Cliente atendido");
+            clientesAtendidos++;
+        } else {
+            System.out.println("No hay clientes en la cola");
+        }
+
+    }
 }
