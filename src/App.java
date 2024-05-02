@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import org.supermercados.hiperdino.sedes.Cajero;
 import org.supermercados.hiperdino.sedes.Cliente;
 import org.supermercados.hiperdino.sedes.Producto;
 import org.supermercados.hiperdino.util.Generador;
@@ -12,6 +13,7 @@ public class App {
 
         Scanner scanner = new Scanner(System.in);
         List<Cliente> clientesConCompras = new ArrayList<>();
+        Cajero cajero = new Cajero(1);
 
         boolean entrar = true;
 
@@ -73,7 +75,80 @@ public class App {
                     }
 
                     break;
+                case "b": // Cajero
 
+                    boolean seleccionCajero = true;
+
+                    while (seleccionCajero) {
+
+                        Menu.mostrarMenuCajero();
+                        System.out.print("Escriba la opcion: ");
+                        String opcionCajero = scanner.next().toLowerCase();
+
+                        switch (opcionCajero) {
+                            case "a":
+
+                                cajero.abrirCaja();
+
+                                break;
+
+                            case "b":
+                                if (cajero.isCajaAbierta() && !clientesConCompras.isEmpty()) {
+
+                                    for (Cliente clienteConCompra : clientesConCompras) {
+                                        if (!cajero.getColaClientes().contains(clienteConCompra)) {
+                                            cajero.agregarCliente(clienteConCompra);
+                                        }
+                                    }
+                                    System.out.println("Cliente/s añadido correctamente");
+
+                                } else {
+                                    System.out.println(
+                                            "La caja aún no ha abierto o no se ha ingresado ningún nuevo cliente. ");
+                                }
+                                clientesConCompras.clear();
+                                break;
+
+                            case "c":
+
+                                cajero.atenderCliente();
+
+                                break;
+
+                            case "d":
+
+                                cajero.mostrarClientesPendientes();
+
+                                break;
+
+                            case "e":
+
+                                cajero.cerrarCaja();
+
+                                break;
+
+                            case "f":
+                                System.out.println("Adeus!");
+                                System.out.println("El cajero a cargo fue:");
+                                System.out.println(cajero.toString());
+                                seleccionCajero = false;
+                                break;
+
+                            default:
+                                System.out.println("Selecciona un opción que exista");
+                                System.out.println("El cajero a cargo fue:");
+                                System.out.println(cajero.toString());
+                                break;
+                        }
+                    }
+
+                    break;
+
+                case "c":
+
+                    System.out.println("Saliendo del programa.");
+                    entrar = false;
+                    break;
                 default:
                     System.out.println("Selecciona un opción que exista");
                     break;
