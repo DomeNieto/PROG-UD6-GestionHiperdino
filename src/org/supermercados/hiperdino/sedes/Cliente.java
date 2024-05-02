@@ -89,4 +89,10 @@ public class Cliente {
 
     }
 
+    public int totalProductos() {
+
+        return cestaCompra.size();
+
+    }
+
 }
