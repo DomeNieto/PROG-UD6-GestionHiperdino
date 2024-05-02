@@ -60,12 +60,33 @@ public class Cliente {
                 System.out.println("Producto " + nombreProducto + " quitado de la cesta.");
                 break;
             }
-            
+
         }
 
         if (!productoEncontrado) {
             System.out.println("El producto " + nombreProducto + " no se encuentra en la cesta.");
         }
+    }
+
+    public String mostrarListaProductos() {
+
+        String listaProductos = "";
+
+        if (!cestaCompra.isEmpty() && cestaCompra != null) {
+
+            listaProductos += "Los productos que tiene en su cesta son: \n";
+            for (Producto producto : cestaCompra) {
+                listaProductos += producto.toString() + "\n";
+            }
+
+        } else {
+
+            listaProductos += "No hay productos en la cesta\n";
+
+        }
+
+        return listaProductos;
+
     }
 
 }
