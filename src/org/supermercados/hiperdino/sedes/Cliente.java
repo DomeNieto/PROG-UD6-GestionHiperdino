@@ -44,4 +44,28 @@ public class Cliente {
 
     }
 
+    public void quitarProducto(String nombreProducto) {
+
+        if (cestaCompra.isEmpty()) {
+            System.out.println("La cesta está vacía. No se puede quitar ningún producto.");
+            return;
+        }
+
+        boolean productoEncontrado = false;
+        for (Producto producto : cestaCompra) {
+
+            if (producto.getNombre().equalsIgnoreCase(nombreProducto)) {
+                cestaCompra.remove(producto);
+                productoEncontrado = true;
+                System.out.println("Producto " + nombreProducto + " quitado de la cesta.");
+                break;
+            }
+            
+        }
+
+        if (!productoEncontrado) {
+            System.out.println("El producto " + nombreProducto + " no se encuentra en la cesta.");
+        }
+    }
+
 }
