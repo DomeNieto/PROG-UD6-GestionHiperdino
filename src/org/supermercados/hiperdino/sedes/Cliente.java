@@ -95,4 +95,16 @@ public class Cliente {
 
     }
 
+    @Override
+    public String toString() {
+
+        return "===================== CLIENTE =====================" +
+                "\n Nombre: " + this.nombre +
+                "\n Total de productos: " + totalProductos() +
+                "\n Lista de artículos en la cesta:\n" +
+                mostrarListaProductos() +
+                "================================================\n";
+
+    }
+
 }
