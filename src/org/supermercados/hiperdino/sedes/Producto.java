@@ -6,4 +6,9 @@ public class Producto {
     final private String marca = "Hiperdino";
     private float precio;
 
+    public Producto(String nombre, float precio) {
+        this.nombre = nombre;
+        this.precio = precio;
+    }
+
 }
