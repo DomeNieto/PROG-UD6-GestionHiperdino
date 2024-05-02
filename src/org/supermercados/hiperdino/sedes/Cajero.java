@@ -10,4 +10,10 @@ public class Cajero {
     private boolean cajaAbierta = false;
     private int clientesAtendidos = 0;
 
+    public Cajero(int numeroIdenticacion) {
+
+        this.numeroIdenticacion = numeroIdenticacion;
+
+    }
+
 }
