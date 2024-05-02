@@ -16,4 +16,28 @@ public class Cajero {
 
     }
 
+    public boolean isCajaAbierta() {
+        return cajaAbierta;
+    }
+
+    public void setCajaAbierta(boolean cajaAbierta) {
+        this.cajaAbierta = cajaAbierta;
+    }
+
+    public int getnumeroIdenticacion() {
+        return numeroIdenticacion;
+    }
+
+    public void setnumeroIdenticacion(int numeroIdenticacion) {
+        this.numeroIdenticacion = numeroIdenticacion;
+    }
+
+    public Queue<Cliente> getColaClientes() {
+        return colaClientes;
+    }
+
+    public void setColaClientes(Queue<Cliente> colaClientes) {
+        this.colaClientes = colaClientes;
+    }
+    
 }
