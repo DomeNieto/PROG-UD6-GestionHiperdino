@@ -1,6 +1,8 @@
 package org.supermercados.hiperdino.util;
 
 import java.util.Random;
+
+import org.supermercados.hiperdino.sedes.Cliente;
 import org.supermercados.hiperdino.sedes.Producto;
 
 public class Generador {
@@ -39,6 +41,18 @@ public class Generador {
         String dni = String.format("%08d%c", numbers, controlCharacter);
 
         return dni;
+
+    }
+
+    public static Cliente personAleatorio() {
+
+        String dni = generadorDni();
+        Random nombre = new Random();
+        int indiceRandom = nombre.nextInt(personas.length);
+
+        Cliente clienteNuevo = new Cliente(personas[indiceRandom], dni);
+
+        return clienteNuevo;
 
     }
 
