@@ -36,5 +36,12 @@ public class Cliente {
     public void setCestaCompra(Stack<Producto> cestaCompra) {
         this.cestaCompra = cestaCompra;
     }
-    
+
+    public void agregarProducto(Producto producto) {
+
+        cestaCompra.add(producto);
+        System.out.println("Porducto añadido correctamente.");
+
+    }
+
 }
