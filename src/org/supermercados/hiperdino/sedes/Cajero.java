@@ -93,4 +93,21 @@ public class Cajero {
         }
 
     }
+
+    @Override
+    public String toString() {
+
+        String clientesEnFila = "";
+        for (Cliente cliente : colaClientes) {
+            clientesEnFila += cliente + "\n";
+        }
+
+        return "===================== CAJERO  =====================" +
+                "* \nNúmero de caja: " + numeroIdenticacion +
+                "* \nTotal de clientes atendidos: " + clientesAtendidos +
+                "* \nClientes en la fila: " + colaClientes.size() + "\n" +
+                clientesEnFila +
+                "================================================\n";
+    }
+
 }
