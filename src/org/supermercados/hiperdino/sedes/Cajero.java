@@ -39,5 +39,16 @@ public class Cajero {
     public void setColaClientes(Queue<Cliente> colaClientes) {
         this.colaClientes = colaClientes;
     }
-    
+
+    public void abrirCaja() {
+
+        if (!cajaAbierta) {
+            cajaAbierta = true;
+            System.out.println("La caja está abierta");
+        } else {
+            System.out.println("La caja está abierta en este momento");
+        }
+
+    }
+
 }
